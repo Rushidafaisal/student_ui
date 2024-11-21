@@ -41,7 +41,7 @@ function App() {
    const editStudent=async(id,updateStudent)=>
    {
     try{
-      const response=await axios.put(`https://student-api-1-u3gu.onrender.com//student/${id}/update`,updateStudent)
+      const response=await axios.put(`https://student-api-1-u3gu.onrender.com/student/${id}/update`,updateStudent)
       if (response.status==200)
         setStudents((students=>
           students.map((student=>student.id==id ? {...student,...updateStudent}:student))
