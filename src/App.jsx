@@ -27,7 +27,7 @@ function App() {
 
   const deleteStudent=async (id)=>{
     try{
-      const response=await axios.delete(`http://127.0.0.1:8000/student/${id}/delete`)
+      const response=await axios.delete(`https://student-api-1-u3gu.onrender.com/student/${id}/delete`)
       if (response.status==204)
         setStudents((students=>
           students.filter((student=>{student.id !==id}))
@@ -41,7 +41,7 @@ function App() {
    const editStudent=async(id,updateStudent)=>
    {
     try{
-      const response=await axios.put(`http://127.0.0.1:8000/student/${id}/update`,updateStudent)
+      const response=await axios.put(`https://student-api-1-u3gu.onrender.com//student/${id}/update`,updateStudent)
       if (response.status==200)
         setStudents((students=>
           students.map((student=>student.id==id ? {...student,...updateStudent}:student))

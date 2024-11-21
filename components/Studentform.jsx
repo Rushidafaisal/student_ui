@@ -10,7 +10,7 @@ function Studentform({onAdd}) {
         e.preventDefault()
         const studentData={name,age,email}
         try{
-            const response=await axios.post('http://127.0.0.1:8000/student/create',studentData)
+            const response=await axios.post('https://student-api-1-u3gu.onrender.com/student/create',studentData)
             console.log(response.data)
             onAdd(studentData)
             setName('')
